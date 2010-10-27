@@ -1,0 +1,7 @@
+<h1><%= @book.title %></h1>
+<p><strong>Cena: </strong><%= @book.price %> zl<br />
+<strong>Temat:</strong> <%= @book.subject.name %><br />
+</p>
+<p><%= @book.description %></p>
+<hr />
+<%= link_to '(Klik, klik) Powrot', {:action => 'index'} %>

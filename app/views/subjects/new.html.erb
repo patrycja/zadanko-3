@@ -1,0 +1,7 @@
+<h1>Przyjazna metoda dodawania nowych tematow</h1>
+<%- form_for @subject do |f|%>
+<p><label for="subject_name">Nazwa</label>:
+<%= f.text_field 'name' %></p>
+<%= f.submit "Stworz" %>
+<%- end %><p />
+<%= link_to '(Klik, klik) Powrot', {:action => 'index', :controller => 'books'} %>

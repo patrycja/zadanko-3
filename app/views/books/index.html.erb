@@ -1,0 +1,18 @@
+<% if @books.blank? %>
+<p>Przykro mi, ale nie ma zadnych ksiazek w systemie :C.</p>
+<% else %>
+<p>W systemie sa nastepujace ksiazki:</p>
+<ul id="books">
+<% @books.each do |c| %>
+
+<li>
+<%= link_to c.title, {:action => "show", :id => c.id} -%>
+<b> <%= link_to 'Edytuj',  {:action => "edit", :id => c.id} %></b>
+<b> <%= link_to "Usun", {:action => "destroy", :id => c.id},
+:confirm => "Czy na pewno chcesz usunac te pozycje?", :method => :delete%></b>
+</li>
+<% end %>
+</ul>
+<% end %>
+<p><%= link_to "Dodaj ksiazke", {:action => 'new' }%></p>
+<p><%= link_to "Dodaj temat", {:action => 'new', :controller => 'subjects'} %></p>

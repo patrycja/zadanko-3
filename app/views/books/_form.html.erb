@@ -1,0 +1,13 @@
+<%- form_for @book do |f|%>
+<%= f.error_messages %>
+<p><label for="book_title">Tytul</label>:
+<%= f.text_field 'title' %></p>
+<p><label for="book_price">Cena</label>:
+<%= f.text_field 'price' %></p>
+<p><label for="book_subject">Temat</label>:
+<%= f.collection_select(:subject_id,
+                         @subjects, :id, :name) %></p>
+<p><label for="book_description">Krotki opis</label><br/>
+<%= f.text_area 'description' %></p>
+<%= f.submit "Zapisz zmiany" %>
+<%- end %>
