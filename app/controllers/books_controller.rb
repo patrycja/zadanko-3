@@ -6,13 +6,13 @@ class BooksController < ApplicationController
   @book = Book.find(params[:id])
 end
  def new
-      @book = Book.create
+      @book = Book.new
       @subjects = Subject.find(:all)
 end
  def create
-      @book = Book.create(params[:book])
+      @book = Book.new(params[:book])
       if @book.save
-            redirect_to :action => 'index'
+            redirect_to :action => 'index', :notice => "udalo sie!!11oneone"
       else
             @subjects = Subject.find(:all)
             render :action => 'new'
